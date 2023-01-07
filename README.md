@@ -10,3 +10,33 @@
 > Percentual da carteira de crédito livre do Sistema Financeiro Nacional com pelo menos uma parcela com atraso superior a 90 dias. Não inclui operações referenciadas em taxas regulamentadas, operações vinculadas a recursos do Banco Nacional de Desenvolvimento Econômico e Social (BNDES) ou quaisquer outras lastreadas em recursos compulsórios ou governamentais.
 <br/> Fonte: https://dadosabertos.bcb.gov.br/dataset/21116-inadimplencia-da-carteira-de-credito-com-recursos-livres---pessoas-fisicas---credito-pessoal-
 
+Os dois endpoints acima retornam uma lista de objetos do mesmo tipo:
+```
+[
+    {
+        "data": String,
+        "valor": Double
+    },
+    {
+        "data": String,
+        "valor": Double
+    },
+    ...
+]
+```
+Consumimos esses dois endpoints e unimos os dois bodies de ambas responses em uma única lista:
+```
+[
+    {
+        "data": String,
+        "taxaMediaJuros": Double,
+        "taxaInadimplencia": Double
+    },
+    {
+        "data": String,
+        "taxaMediaJuros": Double,
+        "taxaInadimplencia": Double
+    },
+    ...
+]
+```
