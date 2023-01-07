@@ -44,6 +44,6 @@ Num primeiro momento, temos desenvolvidos 3 principais endpoints:
 
 | ENDPOINT | DESCRIÇÃO |
 |----------|-----------|
-| http://hostName/ | Restorna relação de taxas do últimos 11 anos e 8 meses |
-| http://hostName/{dd-mm-aaaa}/{dd-mm-aaaa} | Restorna relação de taxas dentro do período informado (Data inicial e data final) |
-| http://hostName/{quantidadeMeses} | Restorna relação de taxas do últimos meses informados em {quantidadeMeses} |
+| http://hostName/api-bcb | Restorna relação de taxas do últimos 11 anos e 8 meses |
+| http://hostName/api-bcb/{dd-mm-aaaa}/{dd-mm-aaaa} | Restorna relação de taxas dentro do período informado (Data inicial e data final) |
+| http://hostName/api-bcb/{quantidadeMeses} | Restorna relação de taxas do últimos meses informados em {quantidadeMeses} |
