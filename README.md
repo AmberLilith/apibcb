@@ -40,3 +40,10 @@ Consumimos esses dois endpoints e unimos os dois bodies de ambas responses em um
     ...
 ]
 ```
+Num primeiro momento, temos desenvolvidos 3 principais endpoints:
+
+| ENDPOINT | DESCRIÇÃO |
+|----------|-----------|
+| http://hostName/ | Restorna relação de taxas do últimos 11 anos e 8 meses |
+| http://hostName/{dd-mm-aaaa}/{dd-mm-aaaa} | Restorna relação de taxas dentro do período informado (Data inicial e data final) |
+| http://hostName/{quantidadeMeses} | Restorna relação de taxas do últimos meses informados em {quantidadeMeses} |

@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api-bcb")
 public class TaxasController {
 
     @Autowired
     TaxasService taxasService;
 
-    @GetMapping("/ultimos_onze_anos")
+    @GetMapping()
     public ResponseEntity<List<Taxas>> obtemTaxasUltimosOnzeAnos() {
         List<TaxaMediaJuros> taxaMediaJuros = taxasService.obtemTaxaMediaJurosUltimosOnzeAnos();
         List<TaxaInadimplencia> taxaInadimplencias = taxasService.obtemTaxasInadimplenciaUltimosOnzeAnos();
@@ -26,15 +26,15 @@ public class TaxasController {
         return new ResponseEntity<>(taxas, HttpStatus.OK);
     }
 
-    @GetMapping("/por_periodo")
-    public ResponseEntity<List<Taxas>> obtemTaxasPorPeriodo(@RequestParam String dataInicial, @RequestParam String dataFinal) {
+    @GetMapping("/{dataInicial}/{dataFinal}")
+    public ResponseEntity<List<Taxas>> obtemTaxasPorPeriodo(@PathVariable String dataInicial, @PathVariable String dataFinal) {
         List<TaxaMediaJuros> taxaMediaJuros = taxasService.obtemTaxaMediaJurosPorPeriodo(dataInicial, dataFinal);
         List<TaxaInadimplencia> taxaInadimplencias = taxasService.obtemTaxasInadimplenciaPorPeriodo(dataInicial, dataFinal);
         List<Taxas> taxas = Taxas.juntaTaxas(taxaMediaJuros, taxaInadimplencias);
         return new ResponseEntity<>(taxas, HttpStatus.OK);
     }
 
-    @GetMapping("/por_qtd_meses/{quantidadeMeses}")
+    @GetMapping("/{quantidadeMeses}")
     public ResponseEntity<List<Taxas>> obtemTaxasPorQuantidadeMeses(@PathVariable Integer quantidadeMeses) {
         List<TaxaMediaJuros> taxaMediaJuros = taxasService.obtemTaxaMediaJurosPorQuantidadeMeses(quantidadeMeses);
         List<TaxaInadimplencia> taxaInadimplencias = taxasService.obtemTaxasInadimplenciaPorQuantidadeMeses(quantidadeMeses);
