@@ -40,10 +40,8 @@ Consumimos esses dois endpoints e unimos os dois bodies de ambas responses em um
     ...
 ]
 ```
-Num primeiro momento, temos desenvolvidos 3 principais endpoints:
+Na v2, temos desenvolvido apenas um endpoint:
 
 | ENDPOINT | DESCRIÇÃO |
 |----------|-----------|
-| http://hostName/api-bcb | Retorna relação de taxas do últimos 11 anos e 8 meses |
-| http://hostName/api-bcb/{dd-mm-aaaa}/{dd-mm-aaaa} | Retorna relação de taxas dentro do período informado (Data inicial e data final) |
-| http://hostName/api-bcb/{quantidadeMeses} | Retorna relação de taxas do últimos meses informados em {quantidadeMeses} |
+| http://hostName/api-bcb/{dd-mm-aaaa}/{dd-mm-aaaa} | Retorna relação de taxas  (Média de Juros e Inadimplência)  dentro do período informado (Data inicial e data final) |
