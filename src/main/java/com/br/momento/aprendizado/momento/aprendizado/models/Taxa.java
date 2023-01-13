@@ -2,15 +2,17 @@ package com.br.momento.aprendizado.momento.aprendizado.models;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-public class TaxaInadimplencia {
+@NoArgsConstructor
+public class Taxa {
 
     private String data;
 
-    @JsonAlias({"valor"})
-    private Double taxaInadimplencia;
-
+    private Double valor;
 }

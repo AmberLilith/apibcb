@@ -26,9 +26,9 @@ public class TaxasController {
 
     @GetMapping("{dataInicial}/{dataFinal}")
     @ApiOperation(value="Retorna relação de taxas (Média de Juros e Inadimplência) dentro do período informado (Data inicial e data final)")
-    public ResponseEntity<List<Taxas>> obtemTaxas(@PathVariable String dataInicial, @PathVariable String dataFinal) throws JsonProcessingException {
-        List<TaxaMediaJuros> taxaMediaJuros = taxasService.obtemTaxa(Series.TAXA_MEDIA_JUROS.getSerie(), dataInicial, dataFinal);
-        List<TaxaInadimplencia> taxaInadimplencias = taxasService.obtemTaxa(Series.TAXA_INADIMPLENCIA.getSerie(), dataInicial, dataFinal);
+    public ResponseEntity<List<Taxas>> obtemTaxas(@PathVariable String dataInicial, @PathVariable String dataFinal){
+        List<?> taxaMediaJuros = taxasService.obtemTaxa(Series.TAXA_MEDIA_JUROS.getSerie(), dataInicial, dataFinal);
+        List<?> taxaInadimplencias = taxasService.obtemTaxa(Series.TAXA_INADIMPLENCIA.getSerie(), dataInicial, dataFinal);
         List<Taxas> taxas = Taxas.juntaTaxas(taxaMediaJuros, taxaInadimplencias);
         return new ResponseEntity<>(taxas, HttpStatus.OK);
     }

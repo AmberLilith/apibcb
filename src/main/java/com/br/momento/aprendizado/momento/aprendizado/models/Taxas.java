@@ -16,10 +16,10 @@ public class Taxas {
 
     private Double taxaInadimplencia;
 
-    public static List<Taxas> juntaTaxas(List<TaxaMediaJuros> taxaMediaJuros, List<TaxaInadimplencia> taxaInadimplencias) {
+    public static List<Taxas> juntaTaxas(List<?> taxaMediaJuros, List<?> taxaInadimplencias) {
         List<Taxas> taxasList = new ArrayList<>();
-        Iterator<TaxaMediaJuros> taxaMediaJurosIterator = taxaMediaJuros.iterator();
-        Iterator<TaxaInadimplencia> taxaInadimplenciaIterator = taxaInadimplencias.iterator();
+        Iterator<?> taxaMediaJurosIterator = taxaMediaJuros.iterator();
+        Iterator<?> taxaInadimplenciaIterator = taxaInadimplencias.iterator();
 
         while (taxaMediaJurosIterator.hasNext() && taxaInadimplenciaIterator.hasNext()) {
             Taxas taxas = new Taxas();

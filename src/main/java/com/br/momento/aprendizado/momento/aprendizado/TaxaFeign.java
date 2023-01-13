@@ -1,5 +1,6 @@
 package com.br.momento.aprendizado.momento.aprendizado;
 
+import com.br.momento.aprendizado.momento.aprendizado.models.Taxa;
 import com.br.momento.aprendizado.momento.aprendizado.models.TaxaInadimplencia;
 import com.br.momento.aprendizado.momento.aprendizado.models.TaxaMediaJuros;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -12,6 +13,6 @@ import java.util.List;
 public interface TaxaFeign {
 
     @GetMapping("/bcdata.sgs.{serie}/dados?formato=json&dataInicial={dataInicial}&dataFinal={dataFinal}")
-    String obtemJsonTaxa(@PathVariable String serie, @PathVariable String dataInicial, @PathVariable String dataFinal);
+    List<Taxa> obtemJsonTaxa(@PathVariable String serie, @PathVariable String dataInicial, @PathVariable String dataFinal);
 
 }
