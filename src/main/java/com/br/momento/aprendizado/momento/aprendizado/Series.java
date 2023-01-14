@@ -1,8 +1,8 @@
 package com.br.momento.aprendizado.momento.aprendizado;
 
 public enum Series {
-    TAXA_MEDIA_JUROS("20744"),
-    TAXA_INADIMPLENCIA("21116");
+    AVERAGE_INTEREST_RATE("20744"),
+    DEFAULT_RATE("21116");
 
     private final String serie;
 
