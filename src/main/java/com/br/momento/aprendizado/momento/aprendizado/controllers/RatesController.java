@@ -24,19 +24,19 @@ public class RatesController {
     @GetMapping("{initialDate}/{finalDate}")
     @ApiOperation(value="Retorna relação de taxas (Média de Juros e Inadimplência) dentro do período informado (Data inicial e data final)")
     public ResponseEntity<List<AllRates>> getRates(@PathVariable String initialDate, @PathVariable String finalDate){
-        List<?> taxaMediaJuros = taxasService.obtemTaxa(Series.AVERAGE_INTEREST_RATE.getSerie(), initialDate, finalDate);
-        List<?> taxaInadimplencias = taxasService.obtemTaxa(Series.DEFAULT_RATE.getSerie(), initialDate, finalDate);
+        List<?> taxaMediaJuros = taxasService.getRates(Series.AVERAGE_INTEREST_RATE.getSerie(), initialDate, finalDate);
+        List<?> taxaInadimplencias = taxasService.getRates(Series.DEFAULT_RATE.getSerie(), initialDate, finalDate);
         List<AllRates> taxas = AllRates.joinRates(taxaMediaJuros, taxaInadimplencias);
         return new ResponseEntity<>(taxas, HttpStatus.OK);
     }
 
-    @PostMapping("{dataInicial}/{dataFinal}")
+    /*@PostMapping("{dataInicial}/{dataFinal}")
     @ApiOperation(value="Retorna relação de taxas todas as taxas informadas no body da requisição dentro do período informado (Data inicial e data final)")
     public ResponseEntity<List<AllRates>> obtemXTaxas(@PathVariable String dataInicial, @PathVariable String dataFinal){
-        List<?> taxaMediaJuros = taxasService.obtemTaxa(Series.AVERAGE_INTEREST_RATE.getSerie(), dataInicial, dataFinal);
-        List<?> taxaInadimplencias = taxasService.obtemTaxa(Series.DEFAULT_RATE.getSerie(), dataInicial, dataFinal);
+        List<?> taxaMediaJuros = taxasService.getRates(Series.AVERAGE_INTEREST_RATE.getSerie(), dataInicial, dataFinal);
+        List<?> taxaInadimplencias = taxasService.getRates(Series.DEFAULT_RATE.getSerie(), dataInicial, dataFinal);
         List<AllRates> taxas = AllRates.joinRates(taxaMediaJuros, taxaInadimplencias);
         return new ResponseEntity<>(taxas, HttpStatus.OK);
-    }
+    }*/
 
 }

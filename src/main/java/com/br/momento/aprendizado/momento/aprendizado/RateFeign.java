@@ -11,6 +11,6 @@ import java.util.List;
 public interface RateFeign {
 
     @GetMapping("/bcdata.sgs.{serie}/dados?formato=json&dataInicial={initialDate}&dataFinal={finalDate}")
-    List<Rate> getRate(@PathVariable String serie, @PathVariable String initialDate, @PathVariable String finalDate);
+    List<Rate> getRates(@PathVariable String serie, @PathVariable String initialDate, @PathVariable String finalDate);
 
 }

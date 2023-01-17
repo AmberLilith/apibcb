@@ -14,8 +14,8 @@ public class RatesService {
     @Autowired
     private RateFeign taxaFeign;
 
-    public List<?> obtemTaxa(String serie, String dataInicial, String dataFinal){
-       List<Rate> rate = taxaFeign.getRate(serie, dataInicial, dataFinal);
-        return RateFactory.convertToSerieList(rate, serie);
+    public List<?> getRates(String serie, String initialDate, String finalDate){
+       List<Rate> rates = taxaFeign.getRates(serie, initialDate, finalDate);
+        return RateFactory.convertToSerieList(rates, serie);
     }
 }

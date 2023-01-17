@@ -1,6 +1,9 @@
 package com.br.momento.aprendizado.momento.aprendizado;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.br.momento.aprendizado.momento.aprendizado.models.AverageInterestRate;
+import com.br.momento.aprendizado.momento.aprendizado.models.Rate;
+
+import java.lang.reflect.Constructor;
 
 /*class Tipos {
 
@@ -18,11 +21,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
     }
 }*/
 
-@SpringBootApplication
+
 public class Test {
 
     @org.junit.jupiter.api.Test
-    public void teste() {
-
+    public void teste() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    
     }
 }
