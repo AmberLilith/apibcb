@@ -1,25 +1,16 @@
 package com.br.momento.aprendizado.momento.aprendizado.controllers;
 
-import com.br.momento.aprendizado.momento.aprendizado.RateFeign;
-import com.br.momento.aprendizado.momento.aprendizado.helpers.RateMockFactory;
-import com.br.momento.aprendizado.momento.aprendizado.models.Rate;
-import com.br.momento.aprendizado.momento.aprendizado.services.RatesService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.br.momento.aprendizado.momento.aprendizado.SerieFeign;
+import com.br.momento.aprendizado.momento.aprendizado.services.SeriesService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
-import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 public class AverageInterestRateTest {
@@ -28,16 +19,16 @@ public class AverageInterestRateTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private RatesService ratesService;
+    private SeriesService ratesService;
 
     @MockBean
-    private RateFeign rateFeign;
+    private SerieFeign rateFeign;
 
 
     @Test
     @DisplayName("")
     public void test() throws Exception {
-        /*List<Rate> rates = RateMockFactory.createListOfRate();
+        /*List<SerieRate> rates = RateMockFactory.createListOfRate();
         List<?> averageInterestRates = RateMockFactory.createListOfAverageInterestRate();
         //Mockito.doReturn(averageInterestRates).when(ratesService.getRates("x", "y","z"));
         Mockito.when(ratesService.getRates("x", "y","z")).thenReturn(averageInterestRates);

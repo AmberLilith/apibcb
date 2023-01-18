@@ -3,7 +3,7 @@ package com.br.momento.aprendizado.momento.aprendizado;
 import lombok.Data;
 
 @Data
-public class Serie {
+public class SerieRate {
 
     private String serie;
 
