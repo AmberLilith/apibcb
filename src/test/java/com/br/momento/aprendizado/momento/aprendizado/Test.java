@@ -1,10 +1,5 @@
 package com.br.momento.aprendizado.momento.aprendizado;
 
-import com.br.momento.aprendizado.momento.aprendizado.models.AverageInterestRate;
-import com.br.momento.aprendizado.momento.aprendizado.models.Rate;
-
-import java.lang.reflect.Constructor;
-
 /*class Tipos {
 
     @Getter
