@@ -1,7 +1,7 @@
 package com.br.momento.aprendizado.momento.aprendizado.controllers;
 
 import com.br.momento.aprendizado.momento.aprendizado.models.Series;
-import com.br.momento.aprendizado.momento.aprendizado.services.SerieService;
+import com.br.momento.aprendizado.momento.aprendizado.services.SerieServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.List;
 public class SerieController {
 
     @Autowired
-    SerieService taxasService;
+    SerieServiceImpl taxasService;
 
     @GetMapping("{initialDate}/{finalDate}")
     @ApiOperation(value = "Retorna relação de taxas (Média de Juros e Inadimplência) dentro do período informado (Data inicial e data final)")
